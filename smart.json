@@ -1,5 +1,6 @@
 {
   "packages": {
-    "reveal-js": {}
+    "reveal-js": {},
+    "iron-router": {}
   }
 }
