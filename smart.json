@@ -1,6 +1,7 @@
 {
   "packages": {
     "reveal-js": {},
-    "iron-router": {}
+    "iron-router": {},
+    "semantic-ui": {}
   }
 }
