@@ -1,1 +1,3 @@
-@import url(packages/reveal-js/reveal.js/css/theme/default.css);
+#menu {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}

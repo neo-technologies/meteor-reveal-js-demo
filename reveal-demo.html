@@ -1,22 +1,66 @@
 <head>
 	<meta charset="utf-8">
-	<title>reveal.js - Barebones</title>
+	<title>reveal.js - The HTML Presentation Framework</title>
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+	<link rel="stylesheet" href="/packages/reveal-js/reveal.js/css/theme/default.css" id="theme"/>
 </head>
 
 <body>
+	{{> menu}}
+	{{> reveal}}
+</body>
+
+<template name="reveal">
 	<div class="reveal">
 		<div class="slides">
-
-			<section>
-				<h2>Barebones Presentation</h2>
-				<p>This example contains the bare minimum includes and markup required to run a reveal.js presentation.</p>
-			</section>
-
-			<section>
-				<h2>No Theme</h2>
-				<p>There's no theme included, so it will fall back on browser defaults.</p>
-			</section>
-
+			{{renderRouter}}
 		</div>
 	</div>
-</body>
+</template>
+
+<template name="menu">
+	<div class="ui menu example" id="menu">
+		<a class="item" href="{{pathFor 'home'}}">Home</a>
+		<a class="item" href="{{pathFor 'barebones'}}">Barebones</a>
+		<div class="right menu">
+			{{> transitionSelect}}
+			{{> themeSelect}}
+		</div>
+	</div>
+</template>
+
+<template name="transitionSelect">
+	<div class="ui dropdown item">
+		Transition <i class="dropdown icon"></i>
+		<div class="menu">
+			<div class="item" data-value="concave">Concave</div>
+			<div class="item" data-value="cube">Cube</div>
+			<div class="item" data-value="default">Default</div>
+			<div class="item" data-value="fade">Fade</div>
+			<div class="item" data-value="linear">Linear</div>
+			<div class="item" data-value="none">None</div>
+			<div class="item" data-value="page">Page</div>
+			<div class="item" data-value="zoom">Zoom</div>
+		</div>
+	</div>
+</template>
+
+<template name="themeSelect">
+	<div class="ui dropdown item">
+		Theme <i class="dropdown icon"></i>
+		<div class="menu">
+			<div class="item" data-value="beige">Beige</div>
+			<div class="item" data-value="blood">Blood</div>
+			<div class="item" data-value="default">Default</div>
+			<div class="item" data-value="moon">Moon</div>
+			<div class="item" data-value="night">Night</div>
+			<div class="item" data-value="none">None</div>
+			<div class="item" data-value="serif">Serif</div>
+			<div class="item" data-value="simple">Simple</div>
+			<div class="item" data-value="sky">Sky</div>
+			<div class="item" data-value="solarized">Solarized</div>
+		</div>
+	</div>
+</template>
+
