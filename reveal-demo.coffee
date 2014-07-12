@@ -1,6 +1,6 @@
 if Meteor.isClient
 
-  Router.configure autoRender: false
+  Router.configure layoutTemplate: 'revealLayout'
 
   Router.map ->
     @route 'home', path: '/'
@@ -12,7 +12,7 @@ if Meteor.isClient
 
   Template.menu.rendered = ->
     $('.ui.dropdown') .dropdown()
-    Router.load -> # Change theme/transition using links params (eg. <a href="?theme=...">)
+    Router.onRun -> # Change theme/transition using links params (eg. <a href="?theme=...">)
       Reveal.configure theme: theme if theme=this.params.theme
       Reveal.configure transition: transition if transition=this.params.transition
 

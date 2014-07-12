@@ -6,15 +6,17 @@
 	<link rel="stylesheet" href="/packages/reveal-js/reveal.js/css/theme/default.css" id="theme"/>
 </head>
 
-<body>
+<body></body>
+
+<template name="revealLayout">
 	{{> menu}}
 	{{> reveal}}
-</body>
+</template>
 
 <template name="reveal">
 	<div class="reveal">
 		<div class="slides">
-			{{renderRouter}}
+			{{> yield}}
 		</div>
 	</div>
 </template>
